@@ -7,7 +7,11 @@ use Illuminate\Support\Str;
 
 class Model extends BaseModel
 {
+	// Desativa o auto incremento numerico
     public $incrementing = false;
+
+    // Necessario para passar informacao em massa
+    protected $guarded = [];
 
     protected static function boot()
     {
