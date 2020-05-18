@@ -23,6 +23,7 @@
                                         </g></g> 
                                     </svg>
                                 </div>
+                                <img src="{{ $channel->image() }}">
                             </div>
                         </div>
                         
