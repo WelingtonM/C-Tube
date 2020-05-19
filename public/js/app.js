@@ -33432,9 +33432,7 @@ Vue.component('subscribe-button', {
         return false;
       }
 
-      return !!this.subscriptions.find(function (subscription) {
-        return subscription.user_id === __auth().id;
-      });
+      return !!this.subscription;
     },
     owner: function owner() {
       if (__auth() && this.channel.user_id === __auth().id) {
@@ -33442,6 +33440,15 @@ Vue.component('subscribe-button', {
       }
 
       return false;
+    },
+    subscription: function subscription() {
+      if (!__auth()) {
+        return null;
+      }
+
+      return this.subscriptions.find(function (subscription) {
+        return subscription.user_id === __auth().id;
+      });
     },
     count: function count() {
       return numeral__WEBPACK_IMPORTED_MODULE_0___default()(this.subscriptions.length).format('0a');
@@ -33451,6 +33458,16 @@ Vue.component('subscribe-button', {
     toggleSubscription: function toggleSubscription() {
       if (!__auth()) {
         alert('Please login to subscribe!!');
+      }
+
+      if (this.owner) {
+        return alert('You cannot subscribe to your channel!!');
+      }
+
+      if (this.subscribed) {
+        axios["delete"]("/channels/".concat(this.channel.id, "/subscriptions/").concat(this.subscription.id));
+      } else {
+        axios["delete"]("/channels/".concat(this.channel.id, "/subscriptions"));
       }
     }
   }
