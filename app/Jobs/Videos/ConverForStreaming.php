@@ -43,6 +43,11 @@ class ConverForStreaming implements ShouldQueue
         $high = (new X264('aac'))->setKiloBitrate(500);
         \FFMpeg::fromDisk('local')->open($this->video->path)
             ->exportForHLS()
+            ->onProgress(function($percentage){
+                $this->video->update([
+                    'percentage' => $percentage
+                ]);
+            })
             ->addFormat($low)
             ->addFormat($mid)
             ->addFormat($high)
