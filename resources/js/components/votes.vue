@@ -69,7 +69,11 @@
 			},
 			entity_owner: {
 				required: true,
-				default: () => ({})
+				default: ''
+			},
+			entity_id: {
+				required: true,
+				default: ''
 			}
 		},
 
@@ -107,15 +111,34 @@
 		},
 		methods: {
 			vote(type) {
+				if (! __auth()) {
+					return alert('Please login to vote')
+				}
 				if (__auth() && __auth().id === this.entity_owner) {
 					return alert('You cannot vote your own video')
 				}
 				if (type === 'up' && this.upvoted) {
-
+					return 
 				}
 				if (type === 'down' && this.downvoted) {
-					
+					return
 				}
+				axios.post(`/votes/${this.entity_id}/${type}`)
+					.then(({data}) => {
+						if (this.upvoted || this.downvoted) {
+							this.votes = this.votes.map(v => {
+								if (v.user_id === __auth().id) {
+									return data
+								}
+								return v
+							})
+						} else {
+							this.votes = [
+								...this.votes,
+								data
+							]
+						}
+					})
 			}
 		}
 	}
