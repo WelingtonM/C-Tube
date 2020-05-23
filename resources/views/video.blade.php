@@ -72,7 +72,9 @@
 @endsection
 
 @section('styles')
+
     <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
+
     <style>
         .vjs-default-skin {
             width: 100%;
@@ -90,6 +92,16 @@
             margin-left: 1em;
         }
     </style>
+
+    <style>
+        .w-full {
+            width: 100% !important;
+        }
+        .w-80 {
+            width: 80% !important;
+        }
+    </style>
+
 @endsection
 
 @section('scripts')
