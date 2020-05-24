@@ -13,7 +13,6 @@ class VideoController extends Controller
 		if (request()->wantsJson()) {
 			return $video;
 		}
-
 		return view('video', compact('video'));
 	}
 
