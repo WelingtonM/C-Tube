@@ -14,31 +14,9 @@ class ChannelController extends Controller
         $this->middleware(['auth'])->only('update');
     }
 
-
-
-    public function index()
-    {
-        //
-    }
-
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
     public function show(Channel $channel)
     {
         return view('channels.show', compact('channel'));
-    }
-
-    public function edit($id)
-    {
-        //
     }
 
     public function update(UpdateChannelRequest $request, Channel $channel)
@@ -54,10 +32,5 @@ class ChannelController extends Controller
         ]);
 
         return redirect()->back();
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 }
