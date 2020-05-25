@@ -11,7 +11,7 @@ class VoteController extends Controller
     public function vote($entityId, $type)
     {
     	$entity = $this->getEntity($entityId);
-    	return auth()->user()->toggleVote($entityId, $type);
+    	return auth()->user()->toggleVote($entity, $type);
     }
 
     public function getEntity($entityId)
@@ -26,7 +26,7 @@ class VoteController extends Controller
     		return $comment;
     	}
 
-    	throw new ModelNotFoundException("Entity not found.");
+    	throw new ModelNotFoundException("Entity not found...:(");
     	
     }
 }

@@ -21956,7 +21956,7 @@ var render = function() {
               },
               [_vm._v("Load More")]
             )
-          : _c("span", [_vm._v("No more comments to show :)")])
+          : _c("span", [_vm._v("No more comments to show")])
       ])
     ],
     2

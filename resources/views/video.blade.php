@@ -92,7 +92,7 @@
             color: #3EA6FF;
         }
         .thumbs-down {
-            margin-left: 1em;
+            margin-left: 1rem;
         }
     </style>
 

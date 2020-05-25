@@ -25,7 +25,7 @@
 
 		<div class="text-center">
 			<button v-if="comments.next_page_url" @click="fetchComments" class="btn btn-success">Load More</button>
-			<span v-else>No more comments to show :)</span>
+			<span v-else>No more comments to show</span>
 		</div>
 		
     </div>	
