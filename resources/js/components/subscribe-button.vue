@@ -1,4 +1,3 @@
-
 <template>
     <button @click="toggleSubscription" class="btn btn-danger">
         {{ owner ? '' : subscribed ? 'Unsubscribe' : 'Subscribe' }} {{ count }} {{ owner ? 'Subscribers' : '' }}

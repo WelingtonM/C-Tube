@@ -76,7 +76,6 @@
 				default: ''
 			}
 		},
-
 		data() {
 			return {
 				votes: this.default_votes
@@ -114,7 +113,7 @@
 				if (! __auth()) {
 					return alert('Please login to vote')
 				}
-				if (__auth() && __auth().id === this.entity_owner) {
+				if (__auth().id === this.entity_owner) {
 					return alert('You cannot vote your own video')
 				}
 				if (type === 'up' && this.upvoted) {
