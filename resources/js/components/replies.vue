@@ -3,7 +3,7 @@
         <div class="form-inline my-4 w-full">
             <input type="text" class="form-control form-control-sm w-80">
             <button class="btn btn-sm btn-primary">
-                <small>Add comment</small>
+                <small>Add reply</small>
             </button>
         </div>
 	    <div class="media mt-3" v-for="reply in replies.data">
