@@ -40,8 +40,8 @@
 		},
 		methods: {
 			fetchReplies() {
-				const url = this.replies.next_page_url ? this.replies.next_page_url : `/comments/${this.comment.id}/replies`
-				axios.get(url).then(({ data }) => {
+				// const url = this.replies.next_page_url ? this.replies.next_page_url : `/comments/${this.comment.id}/replies`
+				axios.get(this.replies.next_page_url).then(({ data }) => {
 					this.replies = {
 						...data,
 						data: [

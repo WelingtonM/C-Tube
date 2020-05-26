@@ -2084,8 +2084,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     fetchReplies: function fetchReplies() {
       var _this = this;
 
-      var url = this.replies.next_page_url ? this.replies.next_page_url : "/comments/".concat(this.comment.id, "/replies");
-      axios.get(url).then(function (_ref) {
+      // const url = this.replies.next_page_url ? this.replies.next_page_url : `/comments/${this.comment.id}/replies`
+      axios.get(this.replies.next_page_url).then(function (_ref) {
         var data = _ref.data;
         _this.replies = _objectSpread(_objectSpread({}, data), {}, {
           data: [].concat(_toConsumableArray(_this.replies.data), _toConsumableArray(data.data))
