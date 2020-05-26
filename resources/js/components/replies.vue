@@ -16,7 +16,6 @@
 	            <votes :default_votes="reply.votes" :entity_id="reply.id" :entity_owner="reply.user.id"></votes>
 	        </div>
 	    </div>
-		
 		<div v-if="comment.repliesCount > 0 && replies.next_page_url" class="text-center">
     		<button @click="fetchReplies" class="btn btn-outline-primary btn-sm">Load Replies</button>
 		</div>
@@ -41,7 +40,8 @@
 		},
 		methods: {
 			fetchReplies() {
-				axios.get(this.replies.next_page_url).then(({ data }) => {
+				const url = this.replies.next_page_url ? this.replies.next_page_url : `/comments/${this.comment.id}/replies`
+				axios.get(url).then(({ data }) => {
 					this.replies = {
 						...data,
 						data: [
