@@ -4,10 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card text-white bg-secondary">
                 <div class="card-header d-flex justify-content-between">
-                    {{ $channel->name }}
-                    <a href="{{ route('channel.upload', $channel->id) }}">Upload Videos</a>
+                    <h4>{{ $channel->name }}</h4>
+                    <a href="{{ route('channel.upload', $channel->id) }}" class="btn btn-success">Upload Videos</a>
                 </div>
 
                 <div class="card-body">
@@ -67,7 +67,7 @@
                                 </ul>
                             @endif
 
-                            <button type="submit" class="btn btn-info">
+                            <button type="submit" class="btn btn-primary">
                                 Update Channel
                             </button>
 
@@ -80,13 +80,13 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card text-white bg-secondary mt-5">
                 <div class="card-header">
-                    Videos
+                    <h4>Videos</h4>
                 </div>
 
                 <div class="card-body">
-                    <table class="table">
+                    <table class="table table-striped table-dark">
                         <thead>
                             <th>Image</th>
                             <th>Title</th>

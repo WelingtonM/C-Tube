@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card text-white bg-secondary">
                 @if($video->editable())
                     <form action="{{ route('videos.update', $video->id) }}" method="POST">
                         @csrf

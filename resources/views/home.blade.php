@@ -4,8 +4,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-header"><h3>Dashboard</h3></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -21,12 +21,12 @@
             </div>
 
             @if($channels->count() !== 0)
-                <div class="card  mt-5">
+                <div class="card text-white bg-secondary  mt-5">
                     <div class="card-header">
-                        Channels
+                        <h4>Channels</h4>
                     </div>
                     <div class="card-body">
-                        <table class="table">
+                        <table class="table table-striped table-dark">
                             <thead>
                                 <th>Name</th>
                                 <th></th>
@@ -48,12 +48,12 @@
             @endif            
 
             @if($videos->count() !== 0)
-                <div class="card  mt-5">
+                <div class="card text-white bg-secondary mt-5">
                     <div class="card-header">
-                        Videos
+                        <h4>Videos</h4>
                     </div>
                     <div class="card-body">
-                        <table class="table">
+                        <table class="table table-striped table-dark">
                             <thead>
                                 <th>Name</th>
                                 <th></th>

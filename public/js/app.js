@@ -22047,7 +22047,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "card mt-5 p-5" },
+    { staticClass: "card text-white bg-secondary mb-5 mt-5" },
     [
       _vm.auth
         ? _c("div", { staticClass: "form-inline my-4 w-full" }, [

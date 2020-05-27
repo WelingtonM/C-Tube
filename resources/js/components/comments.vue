@@ -1,5 +1,5 @@
 <template>
-    <div class="card mt-5 p-5">
+    <div class="card text-white bg-secondary mb-5 mt-5">
         <div v-if="auth" class="form-inline my-4 w-full">
             <input v-model="newComment" type="text" class="form-control form-control-sm w-80">
             <button @click="addComment" class="btn btn-sm btn-primary">
