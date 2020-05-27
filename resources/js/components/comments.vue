@@ -6,7 +6,7 @@
                 <small>Add comment</small>
             </button>
         </div>
-		<comment v-for="comment in comments.data" :key="comment.id" :comment="comment"></comment>
+		<Comment v-for="comment in comments.data" :key="comment.id" :comment="comment" :video="video"></Comment>
 		<div class="text-center">
 			<button v-if="comments.next_page_url" @click="fetchComments" class="btn btn-success">Load More</button>
 			<span v-else>No more comments to show</span>
