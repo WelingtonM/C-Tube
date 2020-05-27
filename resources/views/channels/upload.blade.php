@@ -7,11 +7,14 @@
         <channel-uploads :channel="{{ $channel }}" inline-template>
             
             <div class="col-md-8">
-                <div class="card p-3 d-flex justify-content-center align-items-center" v-if="!selected">
-                    <svg onclick="document.getElementById('video-files').click()" width="70px" height="70px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 461 461"><path d="M365.26 67.4H95.74A95.74 95.74 0 0 0 0 163.13v134.73a95.74 95.74 0 0 0 95.74 95.74h269.52A95.74 95.74 0 0 0 461 297.87V163.14a95.74 95.74 0 0 0-95.74-95.75zM300.5 237.05l-126.06 60.12a5.06 5.06 0 0 1-7.24-4.57v-124a5.06 5.06 0 0 1 7.34-4.52l126.06 63.88a5.06 5.06 0 0 1-.1 9.09z" fill="#f61c0d"/></svg>
+                <div class="text-white bg-dark mb-3 p-3 d-flex justify-content-center align-items-center" v-if="!selected">
+                    <svg onclick="document.getElementById('video-files').click()" class="bi bi-arrow-up-square" width="10%" height="10%" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                      <path fill-rule="evenodd" d="M4.646 8.354a.5.5 0 0 0 .708 0L8 5.707l2.646 2.647a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 0 0 0 .708z"/>
+                      <path fill-rule="evenodd" d="M8 11.5a.5.5 0 0 0 .5-.5V6a.5.5 0 0 0-1 0v5a.5.5 0 0 0 .5.5z"/>
+                    </svg>
                     
                     <input type="file" multiple id="video-files" ref="videos" style="display: none;" @change="upload">
-                    <p class="text-center">Upload Videos</p>
                 </div>
 
                 <div class="card text-white bg-dark mb-3" v-else>
