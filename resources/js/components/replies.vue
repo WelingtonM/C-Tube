@@ -12,7 +12,8 @@
 	        </div>
 	    </div>
 		<div v-if="comment.repliesCount > 0 && replies.next_page_url" class="text-center">
-    		<button @click="fetchReplies" class="btn btn-outline-primary btn-sm">Load Replies</button>
+    		<button v-if="replies.next_page_url" @click="fetchReplies" class="btn btn-outline-primary btn-sm">Load Replies</button>
+    		<span v-if="!replies.next_page_url">No more replies to show :)</span>
 		</div>
 	</div>
 </template>

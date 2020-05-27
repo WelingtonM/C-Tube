@@ -2132,6 +2132,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['comment'],
@@ -22100,7 +22101,11 @@ var render = function() {
               },
               [_vm._v("Load More")]
             )
-          : _c("span", [_vm._v("No more comments to show")])
+          : _vm._e(),
+        _vm._v(" "),
+        !_vm.comments.next_page_url
+          ? _c("span", [_vm._v("No more comments to show :)")])
+          : _vm._e()
       ])
     ],
     2
@@ -22170,14 +22175,20 @@ var render = function() {
       _vm._v(" "),
       _vm.comment.repliesCount > 0 && _vm.replies.next_page_url
         ? _c("div", { staticClass: "text-center" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-outline-primary btn-sm",
-                on: { click: _vm.fetchReplies }
-              },
-              [_vm._v("Load Replies")]
-            )
+            _vm.replies.next_page_url
+              ? _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-outline-primary btn-sm",
+                    on: { click: _vm.fetchReplies }
+                  },
+                  [_vm._v("Load Replies")]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            !_vm.replies.next_page_url
+              ? _c("span", [_vm._v("No more replies to show :)")])
+              : _vm._e()
           ])
         : _vm._e()
     ],
