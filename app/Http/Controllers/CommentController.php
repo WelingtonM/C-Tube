@@ -20,7 +20,7 @@ class CommentController extends Controller
 
     public function store(Request $request, Video $video)
     {
-    	auth()->user()->comments()->create([
+    	return auth()->user()->comments()->create([
     		'body' => $request->body,
     		'video_id' => $video->id,
     		'comment_id' => $request->comment_id
